@@ -57,3 +57,9 @@ public extension FlowRepresentable {
         callback?(args)
     }
 }
+
+extension FlowRepresentable {
+    var erasedBody:Any {
+        return self
+    }
+}

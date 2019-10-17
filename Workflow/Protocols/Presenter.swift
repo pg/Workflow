@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 /**
  Presenter: Used in the event you want to create your own kind of presenter.
  

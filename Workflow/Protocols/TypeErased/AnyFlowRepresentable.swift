@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 /**
  AnyFlowRepresentable: A type erased version of 'FlowRepresentable'. Generally speaking don't use this directly, use FlowRepresentable instead.
  */
@@ -25,4 +24,12 @@ public protocol AnyFlowRepresentable {
     /// - Returns: `AnyFlowRepresentable`. Specifically a new instance from the static class passed to a `Workflow`
     /// - Note: This needs to return a unique instance of your view. Whether programmatic or from the storyboard is irrelevant
     static func instance() -> AnyFlowRepresentable
+    
+    var erasedBody:Any { get }
+}
+
+extension AnyFlowRepresentable {
+    var erasedBody:Any {
+        return self
+    }
 }

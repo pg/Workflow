@@ -82,7 +82,7 @@ public class Workflow: LinkedList<AnyFlowRepresentable.Type> {
         guard let first = firstLoadedInstance else {
             return nil
         }
-        presenter?.launch(view: first.value, from: from, withLaunchStyle: launchStyle)
+        presenter?.launch(view: first.value?.erasedBody, from: from, withLaunchStyle: launchStyle)
         return firstLoadedInstance
     }
     

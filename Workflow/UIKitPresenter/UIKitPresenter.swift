@@ -86,4 +86,7 @@ public extension FlowRepresentable where Self: UIViewController {
     func abandonWorkflow() {
         workflow?.abandon()
     }
+    var erasedBody:Any {
+        return self
+    }
 }

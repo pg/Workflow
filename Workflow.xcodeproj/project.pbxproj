@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D6F33CC235756BA008F5852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F33CB235756BA008F5852 /* AppDelegate.swift */; };
+		1D6F33CE235756BA008F5852 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F33CD235756BA008F5852 /* SceneDelegate.swift */; };
+		1D6F33D0235756BA008F5852 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F33CF235756BA008F5852 /* ContentView.swift */; };
+		1D6F33D2235756BB008F5852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F33D1235756BB008F5852 /* Assets.xcassets */; };
+		1D6F33D5235756BB008F5852 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F33D4235756BB008F5852 /* Preview Assets.xcassets */; };
+		1D6F33D8235756BB008F5852 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D6F33D6235756BB008F5852 /* LaunchScreen.storyboard */; };
+		1D6F33E3235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6F33E2235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift */; };
+		1D6F33EB23575A31008F5852 /* Workflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD8235E2312CC6300D77D3C /* Workflow.framework */; };
+		1D6F33EC23575A31008F5852 /* Workflow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADD8235E2312CC6300D77D3C /* Workflow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1DD0E27B235906E000038EE3 /* SwiftUIPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0E27A235906E000038EE3 /* SwiftUIPresenter.swift */; };
 		27472C9F972F4D5C4F5D2A29 /* Pods_WorkflowExample_WorkflowExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E02615312015EBAC53492E /* Pods_WorkflowExample_WorkflowExampleTests.framework */; };
 		7339A5C72AEF92812564A3A2 /* Pods_WorkflowExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F410624365BB7807E12BEA08 /* Pods_WorkflowExample.framework */; };
 		AD2AEA01231C757A0069F9B4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2AEA00231C757A0069F9B4 /* Location.swift */; };
@@ -64,11 +74,26 @@
 		ADEE775E233BC901007E9FD2 /* PickupOrDeliveryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE775D233BC901007E9FD2 /* PickupOrDeliveryViewControllerTests.swift */; };
 		ADEE7760233BC960007E9FD2 /* Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE775F233BC960007E9FD2 /* Convenience.swift */; };
 		ADEE7763233C2D5B007E9FD2 /* WorkflowNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEE7762233C2D5B007E9FD2 /* WorkflowNotifications.swift */; };
+		DAD692F27A95CE3497E831CD /* Pods_WorkflowSwiftUIExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB03D0AD6638D5FB1DB710D /* Pods_WorkflowSwiftUIExample.framework */; };
 		F93CBFAA29F3056CFE892E13 /* Pods_WorkflowTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B5B41A4F86FDBF12D88F62 /* Pods_WorkflowTests.framework */; };
 		FD64E72C1869DD8B92AC3061 /* Pods_Workflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93153A9A1549D7ECC6FF5A30 /* Pods_Workflow.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1D6F33DF235756BC008F5852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADD823552312CC6300D77D3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D6F33C8235756BA008F5852;
+			remoteInfo = WorkflowSwiftUIExample;
+		};
+		1D6F33ED23575A31008F5852 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADD823552312CC6300D77D3C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADD8235D2312CC6300D77D3C;
+			remoteInfo = Workflow;
+		};
 		AD5BB01D231B82D2001DAF7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADD823552312CC6300D77D3C /* Project object */;
@@ -92,13 +117,42 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1D6F33EF23575A31008F5852 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D6F33EC23575A31008F5852 /* Workflow.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		09E02615312015EBAC53492E /* Pods_WorkflowExample_WorkflowExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkflowExample_WorkflowExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6F33C9235756BA008F5852 /* WorkflowSwiftUIExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkflowSwiftUIExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6F33CB235756BA008F5852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1D6F33CD235756BA008F5852 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1D6F33CF235756BA008F5852 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D6F33D1235756BB008F5852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D6F33D4235756BB008F5852 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D6F33D7235756BB008F5852 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D6F33D9235756BB008F5852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D6F33DE235756BC008F5852 /* WorkflowSwiftUIExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkflowSwiftUIExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6F33E2235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowSwiftUIExampleTests.swift; sourceTree = "<group>"; };
+		1D6F33E4235756BC008F5852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DD0E27A235906E000038EE3 /* SwiftUIPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPresenter.swift; sourceTree = "<group>"; };
+		1FB03D0AD6638D5FB1DB710D /* Pods_WorkflowSwiftUIExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkflowSwiftUIExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A2FC4E659AC99A82ECE86B /* Pods-WorkflowExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowExample.release.xcconfig"; path = "Target Support Files/Pods-WorkflowExample/Pods-WorkflowExample.release.xcconfig"; sourceTree = "<group>"; };
 		356DB6CB5C8022ACC4891ED9 /* Pods-WorkflowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowTests.debug.xcconfig"; path = "Target Support Files/Pods-WorkflowTests/Pods-WorkflowTests.debug.xcconfig"; sourceTree = "<group>"; };
+		364FA2A7ACAEFD02333C6F4E /* Pods-WorkflowSwiftUIExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowSwiftUIExample.release.xcconfig"; path = "Target Support Files/Pods-WorkflowSwiftUIExample/Pods-WorkflowSwiftUIExample.release.xcconfig"; sourceTree = "<group>"; };
 		844F9C41CF2BB78EBB56D9A0 /* Pods-WorkflowExample-WorkflowExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowExample-WorkflowExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-WorkflowExample-WorkflowExampleTests/Pods-WorkflowExample-WorkflowExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		93153A9A1549D7ECC6FF5A30 /* Pods_Workflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D06747513FD57DC845C020 /* Pods-Workflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workflow.debug.xcconfig"; path = "Target Support Files/Pods-Workflow/Pods-Workflow.debug.xcconfig"; sourceTree = "<group>"; };
+		9639A4B9D4F905638030F89B /* Pods-WorkflowSwiftUIExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowSwiftUIExample.debug.xcconfig"; path = "Target Support Files/Pods-WorkflowSwiftUIExample/Pods-WorkflowSwiftUIExample.debug.xcconfig"; sourceTree = "<group>"; };
 		A084DFDED9C9736BB28DAAC6 /* Pods-WorkflowExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowExample.debug.xcconfig"; path = "Target Support Files/Pods-WorkflowExample/Pods-WorkflowExample.debug.xcconfig"; sourceTree = "<group>"; };
 		AA3DC57E64BEE24B54E95F04 /* Pods-Workflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workflow.release.xcconfig"; path = "Target Support Files/Pods-Workflow/Pods-Workflow.release.xcconfig"; sourceTree = "<group>"; };
 		AD2AEA00231C757A0069F9B4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -170,6 +224,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1D6F33C6235756BA008F5852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6F33EB23575A31008F5852 /* Workflow.framework in Frameworks */,
+				DAD692F27A95CE3497E831CD /* Pods_WorkflowSwiftUIExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D6F33DB235756BC008F5852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD5BB008231B82C9001DAF7C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +276,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D6F33CA235756BA008F5852 /* WorkflowSwiftUIExample */ = {
+			isa = PBXGroup;
+			children = (
+				1D6F33CB235756BA008F5852 /* AppDelegate.swift */,
+				1D6F33CD235756BA008F5852 /* SceneDelegate.swift */,
+				1D6F33CF235756BA008F5852 /* ContentView.swift */,
+				1D6F33D1235756BB008F5852 /* Assets.xcassets */,
+				1D6F33D6235756BB008F5852 /* LaunchScreen.storyboard */,
+				1D6F33D9235756BB008F5852 /* Info.plist */,
+				1D6F33D3235756BB008F5852 /* Preview Content */,
+			);
+			path = WorkflowSwiftUIExample;
+			sourceTree = "<group>";
+		};
+		1D6F33D3235756BB008F5852 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1D6F33D4235756BB008F5852 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D6F33E1235756BC008F5852 /* WorkflowSwiftUIExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				1D6F33E2235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift */,
+				1D6F33E4235756BC008F5852 /* Info.plist */,
+			);
+			path = WorkflowSwiftUIExampleTests;
+			sourceTree = "<group>";
+		};
+		1DD0E279235906D000038EE3 /* SwiftUIPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				1DD0E27A235906E000038EE3 /* SwiftUIPresenter.swift */,
+			);
+			path = SwiftUIPresenter;
+			sourceTree = "<group>";
+		};
 		867ECA52B1C8FDC1F385611F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +322,7 @@
 				D2B5B41A4F86FDBF12D88F62 /* Pods_WorkflowTests.framework */,
 				F410624365BB7807E12BEA08 /* Pods_WorkflowExample.framework */,
 				09E02615312015EBAC53492E /* Pods_WorkflowExample_WorkflowExampleTests.framework */,
+				1FB03D0AD6638D5FB1DB710D /* Pods_WorkflowSwiftUIExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,6 +387,8 @@
 				ADD8236B2312CC6300D77D3C /* WorkflowTests */,
 				AD5BB00C231B82C9001DAF7C /* WorkflowExample */,
 				ADEE7750233BAA6C007E9FD2 /* WorkflowExampleTests */,
+				1D6F33CA235756BA008F5852 /* WorkflowSwiftUIExample */,
+				1D6F33E1235756BC008F5852 /* WorkflowSwiftUIExampleTests */,
 				ADD8235F2312CC6300D77D3C /* Products */,
 				D4E280E2374C0659E83AD82F /* Pods */,
 				867ECA52B1C8FDC1F385611F /* Frameworks */,
@@ -290,6 +402,8 @@
 				ADD823672312CC6300D77D3C /* WorkflowTests.xctest */,
 				AD5BB00B231B82C9001DAF7C /* WorkflowExample.app */,
 				ADEE774F233BAA6C007E9FD2 /* WorkflowExampleTests.xctest */,
+				1D6F33C9235756BA008F5852 /* WorkflowSwiftUIExample.app */,
+				1D6F33DE235756BC008F5852 /* WorkflowSwiftUIExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -297,6 +411,7 @@
 		ADD823602312CC6300D77D3C /* Workflow */ = {
 			isa = PBXGroup;
 			children = (
+				1DD0E279235906D000038EE3 /* SwiftUIPresenter */,
 				AD8BEBE72318308C0071A83D /* Models */,
 				AD4AA2A92314646900C3C95E /* UIKitPresenter */,
 				ADD8238C2312CE7B00D77D3C /* CollectionExtensions.swift */,
@@ -418,6 +533,8 @@
 				33A2FC4E659AC99A82ECE86B /* Pods-WorkflowExample.release.xcconfig */,
 				844F9C41CF2BB78EBB56D9A0 /* Pods-WorkflowExample-WorkflowExampleTests.debug.xcconfig */,
 				CF2C1E796D1CCA3C0AC77D60 /* Pods-WorkflowExample-WorkflowExampleTests.release.xcconfig */,
+				9639A4B9D4F905638030F89B /* Pods-WorkflowSwiftUIExample.debug.xcconfig */,
+				364FA2A7ACAEFD02333C6F4E /* Pods-WorkflowSwiftUIExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -436,6 +553,45 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1D6F33C8235756BA008F5852 /* WorkflowSwiftUIExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6F33E9235756BC008F5852 /* Build configuration list for PBXNativeTarget "WorkflowSwiftUIExample" */;
+			buildPhases = (
+				6F9BF195421F95145F491B8C /* [CP] Check Pods Manifest.lock */,
+				1D6F33C5235756BA008F5852 /* Sources */,
+				1D6F33C6235756BA008F5852 /* Frameworks */,
+				1D6F33C7235756BA008F5852 /* Resources */,
+				1D6F33EF23575A31008F5852 /* Embed Frameworks */,
+				FDA999F451C1CF122D1D2216 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D6F33EE23575A31008F5852 /* PBXTargetDependency */,
+			);
+			name = WorkflowSwiftUIExample;
+			productName = WorkflowSwiftUIExample;
+			productReference = 1D6F33C9235756BA008F5852 /* WorkflowSwiftUIExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1D6F33DD235756BC008F5852 /* WorkflowSwiftUIExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6F33EA235756BC008F5852 /* Build configuration list for PBXNativeTarget "WorkflowSwiftUIExampleTests" */;
+			buildPhases = (
+				1D6F33DA235756BC008F5852 /* Sources */,
+				1D6F33DB235756BC008F5852 /* Frameworks */,
+				1D6F33DC235756BC008F5852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1D6F33E0235756BC008F5852 /* PBXTargetDependency */,
+			);
+			name = WorkflowSwiftUIExampleTests;
+			productName = WorkflowSwiftUIExampleTests;
+			productReference = 1D6F33DE235756BC008F5852 /* WorkflowSwiftUIExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AD5BB00A231B82C9001DAF7C /* WorkflowExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5BB01A231B82CC001DAF7C /* Build configuration list for PBXNativeTarget "WorkflowExample" */;
@@ -521,10 +677,17 @@
 		ADD823552312CC6300D77D3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Tyler Thompson";
 				TargetAttributes = {
+					1D6F33C8235756BA008F5852 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					1D6F33DD235756BC008F5852 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 1D6F33C8235756BA008F5852;
+					};
 					AD5BB00A231B82C9001DAF7C = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -559,11 +722,30 @@
 				ADD823662312CC6300D77D3C /* WorkflowTests */,
 				AD5BB00A231B82C9001DAF7C /* WorkflowExample */,
 				ADEE774E233BAA6C007E9FD2 /* WorkflowExampleTests */,
+				1D6F33C8235756BA008F5852 /* WorkflowSwiftUIExample */,
+				1D6F33DD235756BC008F5852 /* WorkflowSwiftUIExampleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1D6F33C7235756BA008F5852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6F33D8235756BB008F5852 /* LaunchScreen.storyboard in Resources */,
+				1D6F33D5235756BB008F5852 /* Preview Assets.xcassets in Resources */,
+				1D6F33D2235756BB008F5852 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D6F33DC235756BC008F5852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD5BB009231B82C9001DAF7C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -693,6 +875,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6F9BF195421F95145F491B8C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WorkflowSwiftUIExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AD661141C48932B2756F7C06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -737,9 +941,44 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FDA999F451C1CF122D1D2216 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkflowSwiftUIExample/Pods-WorkflowSwiftUIExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WorkflowSwiftUIExample/Pods-WorkflowSwiftUIExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WorkflowSwiftUIExample/Pods-WorkflowSwiftUIExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1D6F33C5235756BA008F5852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6F33CC235756BA008F5852 /* AppDelegate.swift in Sources */,
+				1D6F33CE235756BA008F5852 /* SceneDelegate.swift in Sources */,
+				1D6F33D0235756BA008F5852 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D6F33DA235756BC008F5852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6F33E3235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD5BB007231B82C9001DAF7C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -775,6 +1014,7 @@
 				ADD8239423139E2700D77D3C /* AnyFlowRepresentable.swift in Sources */,
 				ADD823792312CC7E00D77D3C /* FlowRepresentable.swift in Sources */,
 				ADD8238A2312CE5900D77D3C /* Node.swift in Sources */,
+				1DD0E27B235906E000038EE3 /* SwiftUIPresenter.swift in Sources */,
 				AD4AA2AD231464A600C3C95E /* Presenter.swift in Sources */,
 				ADD8238D2312CE7B00D77D3C /* CollectionExtensions.swift in Sources */,
 				ADD823882312CE5900D77D3C /* Iterator.swift in Sources */,
@@ -821,6 +1061,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1D6F33E0235756BC008F5852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1D6F33C8235756BA008F5852 /* WorkflowSwiftUIExample */;
+			targetProxy = 1D6F33DF235756BC008F5852 /* PBXContainerItemProxy */;
+		};
+		1D6F33EE23575A31008F5852 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADD8235D2312CC6300D77D3C /* Workflow */;
+			targetProxy = 1D6F33ED23575A31008F5852 /* PBXContainerItemProxy */;
+		};
 		AD5BB01E231B82D2001DAF7C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD5BB00A231B82C9001DAF7C /* WorkflowExample */;
@@ -839,6 +1089,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1D6F33D6235756BB008F5852 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1D6F33D7235756BB008F5852 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		AD5BB011231B82C9001DAF7C /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -858,6 +1116,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1D6F33E5235756BC008F5852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9639A4B9D4F905638030F89B /* Pods-WorkflowSwiftUIExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WorkflowSwiftUIExample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WorkflowSwiftUIExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = TT.WorkflowSwiftUIExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D6F33E6235756BC008F5852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 364FA2A7ACAEFD02333C6F4E /* Pods-WorkflowSwiftUIExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WorkflowSwiftUIExample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WorkflowSwiftUIExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = TT.WorkflowSwiftUIExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1D6F33E7235756BC008F5852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WorkflowSwiftUIExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = TT.WorkflowSwiftUIExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkflowSwiftUIExample.app/WorkflowSwiftUIExample";
+			};
+			name = Debug;
+		};
+		1D6F33E8235756BC008F5852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WorkflowSwiftUIExampleTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = TT.WorkflowSwiftUIExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkflowSwiftUIExample.app/WorkflowSwiftUIExample";
+			};
+			name = Release;
+		};
 		AD5BB01B231B82CC001DAF7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A084DFDED9C9736BB28DAAC6 /* Pods-WorkflowExample.debug.xcconfig */;
@@ -1162,6 +1504,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1D6F33E9235756BC008F5852 /* Build configuration list for PBXNativeTarget "WorkflowSwiftUIExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6F33E5235756BC008F5852 /* Debug */,
+				1D6F33E6235756BC008F5852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D6F33EA235756BC008F5852 /* Build configuration list for PBXNativeTarget "WorkflowSwiftUIExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6F33E7235756BC008F5852 /* Debug */,
+				1D6F33E8235756BC008F5852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AD5BB01A231B82CC001DAF7C /* Build configuration list for PBXNativeTarget "WorkflowExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

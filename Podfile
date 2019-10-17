@@ -29,3 +29,10 @@ target 'WorkflowExample' do
   end
   
 end
+
+target 'WorkflowSwiftUIExample' do
+  use_frameworks!
+  
+  pod 'DynamicWorkflow', :path => '.'
+  
+end
