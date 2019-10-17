@@ -18,15 +18,20 @@ public extension FlowRepresentable where Self: View {
 }
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+public class WorkflowModel: ObservableObject {
+    @Published var view:AnyView = AnyView(EmptyView())
+}
+
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct WorkflowView: View, Presenter {
     public init() { }
-
+    
     public func abandon(_ workflow: Workflow, animated: Bool, onFinish: (() -> Void)?) {
-        currentView = AnyView(EmptyView())
+        currentView.view = AnyView(EmptyView())
     }
 
     public func launch(view:AnyView, from root:AnyView, withLaunchStyle launchStyle: PresentationType) {
-        currentView = view
+        currentView.view = view
     }
 
     public init(workflow:Workflow) {
@@ -34,9 +39,8 @@ public struct WorkflowView: View, Presenter {
         _ = workflow.launch(from: body, with: nil)
     }
 
-    @State var currentView:AnyView = AnyView(Text("WRONG"))
-
+    @ObservedObject var currentView:WorkflowModel = WorkflowModel()
     public var body: AnyView {
-        currentView
+        currentView.view
     }
 }

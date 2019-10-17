@@ -138,8 +138,8 @@ public class Workflow: LinkedList<AnyFlowRepresentable.Type> {
             
             self.setupCallbacks(for: nodeToPresent, onFinish: onFinish)
             
-            self.presenter?.launch(view: instanceToPresent,
-                                   from: self.instances.first?.traverse(node.position)?.value,
+            self.presenter?.launch(view: instanceToPresent.erasedBody,
+                                   from: self.instances.first?.traverse(node.position)?.value?.erasedBody,
                                    withLaunchStyle: instanceToPresent.preferredLaunchStyle)
         }
     }
