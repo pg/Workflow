@@ -17,6 +17,7 @@
 		1D6F33EB23575A31008F5852 /* Workflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADD8235E2312CC6300D77D3C /* Workflow.framework */; };
 		1D6F33EC23575A31008F5852 /* Workflow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADD8235E2312CC6300D77D3C /* Workflow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DD0E27B235906E000038EE3 /* SwiftUIPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0E27A235906E000038EE3 /* SwiftUIPresenter.swift */; };
+		1DD0E27F235B7D5A00038EE3 /* SwiftUIPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD0E27D235B797300038EE3 /* SwiftUIPresenterTests.swift */; };
 		27472C9F972F4D5C4F5D2A29 /* Pods_WorkflowExample_WorkflowExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E02615312015EBAC53492E /* Pods_WorkflowExample_WorkflowExampleTests.framework */; };
 		7339A5C72AEF92812564A3A2 /* Pods_WorkflowExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F410624365BB7807E12BEA08 /* Pods_WorkflowExample.framework */; };
 		AD2AEA01231C757A0069F9B4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2AEA00231C757A0069F9B4 /* Location.swift */; };
@@ -145,6 +146,7 @@
 		1D6F33E2235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkflowSwiftUIExampleTests.swift; sourceTree = "<group>"; };
 		1D6F33E4235756BC008F5852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DD0E27A235906E000038EE3 /* SwiftUIPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPresenter.swift; sourceTree = "<group>"; };
+		1DD0E27D235B797300038EE3 /* SwiftUIPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPresenterTests.swift; sourceTree = "<group>"; };
 		1FB03D0AD6638D5FB1DB710D /* Pods_WorkflowSwiftUIExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkflowSwiftUIExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33A2FC4E659AC99A82ECE86B /* Pods-WorkflowExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowExample.release.xcconfig"; path = "Target Support Files/Pods-WorkflowExample/Pods-WorkflowExample.release.xcconfig"; sourceTree = "<group>"; };
 		356DB6CB5C8022ACC4891ED9 /* Pods-WorkflowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkflowTests.debug.xcconfig"; path = "Target Support Files/Pods-WorkflowTests/Pods-WorkflowTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		1D6F33CA235756BA008F5852 /* WorkflowSwiftUIExample */ = {
 			isa = PBXGroup;
 			children = (
+				1DD0E27C2359303000038EE3 /* Ordering */,
 				1D6F33CB235756BA008F5852 /* AppDelegate.swift */,
 				1D6F33CD235756BA008F5852 /* SceneDelegate.swift */,
 				1D6F33CF235756BA008F5852 /* ContentView.swift */,
@@ -301,6 +304,7 @@
 		1D6F33E1235756BC008F5852 /* WorkflowSwiftUIExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				1DD0E27D235B797300038EE3 /* SwiftUIPresenterTests.swift */,
 				1D6F33E2235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift */,
 				1D6F33E4235756BC008F5852 /* Info.plist */,
 			);
@@ -313,6 +317,13 @@
 				1DD0E27A235906E000038EE3 /* SwiftUIPresenter.swift */,
 			);
 			path = SwiftUIPresenter;
+			sourceTree = "<group>";
+		};
+		1DD0E27C2359303000038EE3 /* Ordering */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ordering;
 			sourceTree = "<group>";
 		};
 		867ECA52B1C8FDC1F385611F /* Frameworks */ = {
@@ -412,8 +423,8 @@
 			isa = PBXGroup;
 			children = (
 				1DD0E279235906D000038EE3 /* SwiftUIPresenter */,
-				AD8BEBE72318308C0071A83D /* Models */,
 				AD4AA2A92314646900C3C95E /* UIKitPresenter */,
+				AD8BEBE72318308C0071A83D /* Models */,
 				ADD8238C2312CE7B00D77D3C /* CollectionExtensions.swift */,
 				ADD8237B2312CE5900D77D3C /* LinkedList */,
 				ADD8237A2312CE1500D77D3C /* Protocols */,
@@ -975,6 +986,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD0E27F235B7D5A00038EE3 /* SwiftUIPresenterTests.swift in Sources */,
 				1D6F33E3235756BC008F5852 /* WorkflowSwiftUIExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

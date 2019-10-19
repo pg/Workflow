@@ -63,6 +63,11 @@ struct TestView2: View, FlowRepresentable {
         AnyView(
             VStack {
                 Text("Last!")
+                Button(action: {
+                    self.workflow?.abandon()
+                }) {
+                    Text("Fin.")
+                }
             }
         )
     }

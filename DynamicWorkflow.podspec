@@ -15,4 +15,8 @@ iOS has a linear paradigm for navigation that doesn't support a lot of flexibili
   s.swift_version = '5'
 
   s.source_files = 'Workflow/**/*.{swift,h,m}' 
+  # s.exclude_files = 'Classes/**/unused.{h,m}'
+  # subspec 'SwiftUI' do |sp|
+  #   sp.source_files = 'Classes/Pinboard'
+  # end
 end

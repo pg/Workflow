@@ -24,6 +24,8 @@ public class WorkflowModel: ObservableObject {
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct WorkflowView: View, Presenter {
+    @ObservedObject var currentView:WorkflowModel = WorkflowModel()
+
     public init() { }
     
     public func abandon(_ workflow: Workflow, animated: Bool, onFinish: (() -> Void)?) {
@@ -39,7 +41,6 @@ public struct WorkflowView: View, Presenter {
         _ = workflow.launch(from: body, with: nil)
     }
 
-    @ObservedObject var currentView:WorkflowModel = WorkflowModel()
     public var body: AnyView {
         currentView.view
     }
