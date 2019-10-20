@@ -12,18 +12,17 @@ struct ContentView: View {
     var body: some View {
         WorkflowView(workflow: [
             TestView.self,
-            TestView2.self
-        ])
+            TestView2.self,
+            TestView3.self
+        ], with: "test")
     }
 }
 
 struct TestView: View, FlowRepresentable {
-    func shouldLoad(with args: Never?) -> Bool { return true }
+    typealias IntakeType = Never
     
     var preferredLaunchStyle: PresentationType
-    
     weak var workflow: Workflow?
-    
     var callback: ((Any?) -> Void)?
     
     static func instance() -> AnyFlowRepresentable {
@@ -32,46 +31,57 @@ struct TestView: View, FlowRepresentable {
     
     var body:AnyView {
         AnyView(
-            VStack {
-                Text("First!")
-                Button(action: {
-                    self.proceedInWorkflow()
-                }) {
-                    Text("Next")
-                    
-                }
+            Button(action: {
+                self.proceedInWorkflow("")
+            }) {
+                Text("Next")
             }
         )
     }
-
 }
 
 struct TestView2: View, FlowRepresentable {
-    func shouldLoad(with args: Never?) -> Bool { return true }
+    typealias IntakeType = Never
     
     var preferredLaunchStyle: PresentationType
-    
     weak var workflow: Workflow?
-    
     var callback: ((Any?) -> Void)?
     
     static func instance() -> AnyFlowRepresentable {
-        return TestView2(preferredLaunchStyle: .default)
+        return TestView2(preferredLaunchStyle: .navigationStack)
     }
     
     var body:AnyView {
         AnyView(
-            VStack {
-                Text("Last!")
-                Button(action: {
-                    self.workflow?.abandon()
-                }) {
-                    Text("Fin.")
-                }
+            Button(action: {
+                self.proceedInWorkflow()
+            }) {
+                Text("Almost!!")
             }
         )
     }
+}
 
+struct TestView3: View, FlowRepresentable {
+    typealias IntakeType = Never
+
+    var preferredLaunchStyle: PresentationType
+    weak var workflow: Workflow?
+    var callback: ((Any?) -> Void)?
+    
+    static func instance() -> AnyFlowRepresentable {
+        return TestView3(preferredLaunchStyle: .navigationStack)
+    }
+    
+    var body:AnyView {
+        AnyView(
+            Button(action: {
+                self.workflow?.abandon()
+            }) {
+                Text("Fin.")
+            }
+        )
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

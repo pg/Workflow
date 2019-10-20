@@ -130,14 +130,18 @@ public class Workflow: LinkedList<AnyFlowRepresentable.Type> {
                 return instance?.erasedShouldLoad(with: argsToPass) == true
             }
 
-            guard let nodeToPresent = nextNode,
-                  let instanceToPresent = self.instances.first?.traverse(nodeToPresent.position)?.value else {
+            guard let nodeToPresent = nextNode else {
                 onFinish?(args)
                 return
             }
             
             self.setupCallbacks(for: nodeToPresent, onFinish: onFinish)
-            
+
+            guard let instanceToPresent = self.instances.first?.traverse(nodeToPresent.position)?.value else {
+                onFinish?(args)
+                return
+            }
+
             self.presenter?.launch(view: instanceToPresent.erasedBody,
                                    from: self.instances.first?.traverse(node.position)?.value?.erasedBody,
                                    withLaunchStyle: instanceToPresent.preferredLaunchStyle)
