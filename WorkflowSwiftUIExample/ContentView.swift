@@ -10,11 +10,13 @@ import SwiftUI
 import Workflow
 struct ContentView: View {
     var body: some View {
-        WorkflowView(workflow: [
-            TestView.self,
-            TestView2.self,
-            TestView3.self
-        ], with: "test")
+        TestViews.views[ProcessInfo.processInfo.environment["testView"] ?? "",
+                        default:
+            AnyView(WorkflowView(workflow: [
+                TestView.self,
+                TestView2.self,
+                TestView3.self
+            ], with: "test"))]
     }
 }
 
