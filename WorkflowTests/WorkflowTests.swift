@@ -184,10 +184,10 @@ class WorkflowTests: XCTestCase {
     
     func testPresenterThrowsAFatalErrorWhenThereIsATypeMismatch() {
         class View { }
-        class NotView { }
+        class NotView: MockFlowRepresentable { }
         let presenter = TestTypedPresenter<View>()
         XCTAssertThrowsFatalError{
-            presenter.launch(view: NotView(), from: NotView(), withLaunchStyle: .default)
+            presenter.launch(view: WorkflowNode(with: NotView()), from: NotView(), withLaunchStyle: .default)
         }
     }
     
@@ -203,9 +203,9 @@ class WorkflowTests: XCTestCase {
         var launchView:Any?
         var launchRoot:Any?
         var launchStyle:PresentationType?
-        func launch(view: Any?, from root: Any?, withLaunchStyle launchStyle: PresentationType) {
+        func launch(view: WorkflowNode?, from root: Any?, withLaunchStyle launchStyle: PresentationType) {
             launchCalled += 1
-            launchView = view
+            launchView = view?.value?.erasedBody
             launchRoot = root
             self.launchStyle = launchStyle
         }

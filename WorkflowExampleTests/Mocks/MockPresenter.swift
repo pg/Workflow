@@ -10,9 +10,14 @@ import Foundation
 @testable import DynamicWorkflow
 
 class MockPresenter: Presenter {
+    func launch(view: Any, from root: Any, withLaunchStyle launchStyle: PresentationType) {
+        
+    }
+    
     var abandonCalled = 0
     var lastWorkflow:Workflow?
     var lastAnimated:Bool?
+    typealias ViewType = Any
     func abandon(_ workflow: Workflow, animated: Bool, onFinish: (() -> Void)?) {
         abandonCalled += 1
         lastWorkflow = workflow

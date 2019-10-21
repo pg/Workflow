@@ -483,7 +483,16 @@ class LinkedListTests: XCTestCase {
         XCTAssertNil(list.first?.traverse { $0.value == 9 })
         XCTAssertEqual(list.first?.traverse{ $0.value == 1 }?.value, 1)
     }
-    
+
+    func testTraversingBackwardsUntilPreconditionIsMet() {
+        let list = LinkedList([1, 2, 3, 4, 5, 6, 7, 8])
+        XCTAssertEqual(list.first?.traverse(2)?.traverse(direction: .backward) { $0.value == 1 }?.value, 1)
+        XCTAssertEqual(list.first?.traverse(2)?.traverse(direction: .backward) { $0.value == 1 }?.position, 0)
+        XCTAssertNil(list.last?.traverse(direction: .backward) { $0.value == 9 })
+        XCTAssertEqual(list.last?.traverse(direction: .backward) { $0.value == 4 }?.value, 4)
+        XCTAssertEqual(list.last?.traverse(direction: .backward) { $0.value == 4 }?.position, 3)
+    }
+
     class ComplexObject {
         var i:Int
         init(_ i:Int) {

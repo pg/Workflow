@@ -10,6 +10,6 @@ import Foundation
 public protocol AnyPresenter {
     init()
     
-    func launch(view:Any?, from root:Any?, withLaunchStyle launchStyle:PresentationType)
+    func launch(view:WorkflowNode?, from root:Any?, withLaunchStyle launchStyle:PresentationType)
     func abandon(_ workflow:Workflow, animated:Bool, onFinish:(() -> Void)?)
 }

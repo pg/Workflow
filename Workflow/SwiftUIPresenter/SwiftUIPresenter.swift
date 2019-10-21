@@ -18,8 +18,22 @@ public extension FlowRepresentable where Self: View {
 }
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+public struct NavWrapper: View {
+    @State var presented = true
+    var destination:AnyView
+    var current:AnyView?
+    
+    public var body: some View {
+        NavigationLink(destination: destination, isActive: $presented) {
+            current ?? AnyView(EmptyView())
+        }
+    }
+}
+
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public class WorkflowModel: ObservableObject {
     @Published var view:AnyView = AnyView(EmptyView())
+    @Published var currentNode:WorkflowNode?
     @Published var previousView:AnyView = AnyView(EmptyView())
     @Published var launchStyle:PresentationType = .default {
         willSet(this) {
@@ -33,19 +47,22 @@ public class WorkflowModel: ObservableObject {
 
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct WorkflowView: View, Presenter {
-    @ObservedObject var currentView:WorkflowModel = WorkflowModel()
+    @ObservedObject var workflowModel:WorkflowModel = WorkflowModel()
 
     public init() { }
     
     public func abandon(_ workflow: Workflow, animated: Bool, onFinish: (() -> Void)?) {
-        currentView.launchStyle = .default
-        currentView.view = AnyView(EmptyView())
+        workflowModel.launchStyle = .default
+        workflowModel.view = AnyView(EmptyView())
     }
 
-    public func launch(view:AnyView, from root:AnyView, withLaunchStyle launchStyle: PresentationType) {
-        currentView.previousView = AnyView(root)
-        currentView.view = view
-        currentView.launchStyle = launchStyle
+    public func launch(view:WorkflowNode, from root:AnyView, withLaunchStyle launchStyle: PresentationType) {
+        workflowModel.previousView = AnyView(root)
+        workflowModel.currentNode = view
+        if let v = view.value?.erasedBody as? AnyView {
+            workflowModel.view = v
+        }
+        workflowModel.launchStyle = launchStyle
     }
 
     public init(workflow:Workflow, with args:Any?, withLaunchStyle launchStyle:PresentationType = .default, onFinish:((Any?) -> Void)? = nil) {
@@ -54,16 +71,42 @@ public struct WorkflowView: View, Presenter {
     }
 
     public var body: AnyView {
-        switch currentView.launchStyle {
-            case .modally: return AnyView(currentView.previousView.popover(isPresented: $currentView.shouldPresentModally, content: { self.currentView.view }))
-            case .navigationStack: return AnyView(
-                NavigationView {
-                    VStack {
-                        NavigationLink(destination: currentView.view, isActive: $currentView.shouldPresentWithNavigationStack) { currentView.previousView }
-                    }
-                }
-            )
-            case .default: return currentView.view
+        switch workflowModel.launchStyle {
+            case .modally: return AnyView(workflowModel.previousView.popover(isPresented: $workflowModel.shouldPresentModally, content: { self.workflowModel.view }))
+            case .navigationStack: return generateNavView()
+            case .default: return workflowModel.view
         }
+    }
+    
+    func generateNavView() -> AnyView {
+        let currentNode = workflowModel.currentNode
+        let currentPosition = currentNode?.position ?? 0
+        func generateViewRecursively(node: WorkflowNode?) -> AnyView {
+            guard let node = node else { return AnyView(EmptyView()) }
+            guard node.position < currentPosition else {
+                let current = (currentPosition > 1) ? node.previous?.value?.erasedBody as? AnyView : nil
+                return AnyView(
+                    NavWrapper(destination: workflowModel.view, current: current)
+                )
+            }
+            if  node.next?.value?.preferredLaunchStyle == .navigationStack {
+                return AnyView(
+                    NavWrapper(destination: generateViewRecursively(node: node.next))
+                )
+            }
+            return AnyView(EmptyView())
+        }
+        let firstNavStack = currentNode?.traverse(direction: .backward) {
+            $0.value?.preferredLaunchStyle != .navigationStack
+        }
+        let v = generateViewRecursively(node: firstNavStack?.next)
+        return AnyView(
+            NavigationView {
+                VStack {
+                    firstNavStack?.value?.erasedBody as? AnyView ?? AnyView(EmptyView())
+                    v
+                }
+            }
+        )
     }
 }

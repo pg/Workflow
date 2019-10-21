@@ -29,6 +29,7 @@ import Foundation
  }
  ```
  */
+public typealias WorkflowNode = LinkedList<AnyFlowRepresentable?>.Node<AnyFlowRepresentable?>
 public class Workflow: LinkedList<AnyFlowRepresentable.Type> {
     
     internal var instances:LinkedList<AnyFlowRepresentable?> = []
@@ -82,7 +83,7 @@ public class Workflow: LinkedList<AnyFlowRepresentable.Type> {
         guard let first = firstLoadedInstance else {
             return nil
         }
-        presenter?.launch(view: first.value?.erasedBody, from: from, withLaunchStyle: launchStyle)
+        presenter?.launch(view: first, from: from, withLaunchStyle: launchStyle)
         return firstLoadedInstance
     }
     
@@ -142,7 +143,7 @@ public class Workflow: LinkedList<AnyFlowRepresentable.Type> {
                 return
             }
 
-            self.presenter?.launch(view: instanceToPresent.erasedBody,
+            self.presenter?.launch(view: nodeToPresent,
                                    from: self.instances.first?.traverse(node.position)?.value?.erasedBody,
                                    withLaunchStyle: instanceToPresent.preferredLaunchStyle)
         }

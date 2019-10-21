@@ -17,18 +17,26 @@ import Foundation
 public protocol Presenter: AnyPresenter {
     /// ViewType: The type your presenter deals with (e.g. UIViewController)
     associatedtype ViewType
+    associatedtype PreferredIntakeType
     /// launch: A method to let the presenter know it needs to present a view
     /// - Parameter view: The view to show
     /// - Parameter root: The view that is currently visible
     /// - Parameter launchStyle: The preferred style to launch the view with see: `PresentationType`
-    func launch(view:ViewType, from root:ViewType, withLaunchStyle launchStyle: PresentationType)
+    func launch(view:PreferredIntakeType, from root:ViewType, withLaunchStyle launchStyle: PresentationType)
 }
 
 extension Presenter {
-    public func launch(view: Any?, from root: Any?, withLaunchStyle launchStyle: PresentationType) {
-        guard let v = view as? ViewType, let r = root as? ViewType else {
-            fatalError("\(String(describing:Self.self)) is unaware of view type: \(String(describing: view)), expected view type: \(ViewType.self)")
+    public func launch(view: WorkflowNode?, from root: Any?, withLaunchStyle launchStyle: PresentationType) {
+        if let v = view as? PreferredIntakeType {
+            guard let r = root as? ViewType else {
+                fatalError("\(String(describing:Self.self)) is unaware of view type: \(String(describing: view)), expected view type: \(ViewType.self)")
+            }
+            launch(view: v, from: r, withLaunchStyle: launchStyle)
+        } else {
+            guard let v = view?.value?.erasedBody as? PreferredIntakeType, let r = root as? ViewType else {
+                fatalError("\(String(describing:Self.self)) is unaware of view type: \(String(describing: view)), expected view type: \(ViewType.self)")
+            }
+            launch(view: v, from: r, withLaunchStyle: launchStyle)
         }
-        launch(view: v, from: r, withLaunchStyle: launchStyle)
     }
 }
